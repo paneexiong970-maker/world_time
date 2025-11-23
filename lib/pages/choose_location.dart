@@ -11,7 +11,7 @@ class _ChooseLocationState extends State<ChooseLocation> {
   void initState() {
     super.initState();
   }
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
