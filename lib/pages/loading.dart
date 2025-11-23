@@ -8,16 +8,17 @@ class Loading extends StatefulWidget {
 }
 
 class _LoadingState extends State<Loading> {
-
   void getTime() async {
     // make the request
-    Response response = await get('http://worldtimeapi.org/api/timezone/Europe/London');
+    Response response = await get(
+      Uri.parse('http://worldtimeapi.org/api/timezone/Europe/London'),
+    );
     Map data = jsonDecode(response.body);
     //print(data);
 
     // get properties from json
     String datetime = data['datetime'];
-    String offset = data['utc_offset'].substring(1,3);
+    String offset = data['utc_offset'].substring(1, 3);
     //print(datetime);
     //print(offset);
 
@@ -35,9 +36,6 @@ class _LoadingState extends State<Loading> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('loading screen'),
-    );
+    return Scaffold(body: Text('loading screen'));
   }
 }
-
