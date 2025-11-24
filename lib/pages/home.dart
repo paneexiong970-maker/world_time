@@ -7,11 +7,16 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: Column(
-          children: [
+          children: <Widget>[
             TextButton.icon(
               onPressed: () {
                 Navigator.pushNamed(context, '/location');
@@ -19,7 +24,6 @@ class _HomeState extends State<Home> {
               icon: Icon(Icons.edit_location),
               label: Text('Edit Location'),
             ),
-            Text('home screen'),
           ],
         ),
       ),
